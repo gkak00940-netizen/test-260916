@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로그인 | 고흥사랑 카페</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">고흥사랑</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#menu">Menu</a></li>
+        <li><a href="../index.html#location">Location</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+        <li><a href="login.html" class="nav-login" aria-current="page">Login</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="메뉴 열기">☰</button>
+    </div>
+  </nav>
+
+  <!-- Login -->
+  <section id="login" class="login-section">
+    <div class="login-card">
+      <h1 class="section-title">Login</h1>
+      <p class="login-subtitle">고흥사랑에 오신 것을 환영합니다.</p>
+
+      <form id="login-form">
+        <div class="form-group">
+          <label for="login-email">이메일</label>
+          <input type="email" id="login-email" name="email" placeholder="example@email.com" autocomplete="email" required>
+        </div>
+        <div class="form-group">
+          <label for="login-password">비밀번호</label>
+          <input type="password" id="login-password" name="password" placeholder="비밀번호를 입력해주세요." autocomplete="current-password" required>
+        </div>
+        <button type="submit" class="btn login-btn">로그인</button>
+        <p id="login-msg" class="login-msg" hidden></p>
+      </form>
+
+      <a href="signup.html" class="btn btn-outline login-btn">회원가입하기</a>
+
+      <a href="../index.html" class="login-back">← 홈으로 돌아가기</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2026 고흥사랑. All rights reserved.</p>
+      <p>전라남도 고흥군 고흥읍 고흥로 12 · 061-000-0000</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/supabase-config.js"></script>
+  <script src="../js/login.js"></script>
+</body>
+</html>

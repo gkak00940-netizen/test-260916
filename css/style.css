@@ -137,6 +137,25 @@ img {
   color: var(--color-accent);
 }
 
+.nav-links {
+  align-items: center;
+}
+
+/* Login 버튼 (기존 .btn 스타일을 작게) */
+.nav-links a.nav-login {
+  display: inline-block;
+  padding: 6px 18px;
+  background: var(--color-accent);
+  color: #fff;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.nav-links a.nav-login:hover {
+  background: var(--color-accent-hover);
+  color: #fff;
+}
+
 .nav-toggle {
   display: none;
   background: none;
@@ -302,6 +321,96 @@ img {
 }
 
 /* ===========================
+   Login
+=========================== */
+.login-section {
+  margin-top: 60px; /* navbar 높이만큼 */
+  min-height: calc(100vh - 60px - 128px); /* 화면 높이 - navbar - footer */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  background: var(--color-bg-gray);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 48px 40px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.login-card .section-title {
+  margin-bottom: 8px;
+}
+
+.login-subtitle {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 32px;
+}
+
+.login-card form {
+  text-align: left;
+}
+
+.login-btn {
+  width: 100%;
+  min-height: 48px;
+  margin-top: 8px;
+}
+
+.login-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.login-msg {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: var(--color-accent);
+  text-align: center;
+}
+
+/* 테두리형 버튼 (회원가입하기) */
+.btn-outline {
+  background: transparent;
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  margin-top: 12px;
+}
+
+.btn-outline:hover {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.login-switch {
+  margin-top: 28px;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.login-switch a {
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+.login-back {
+  display: inline-block;
+  margin-top: 28px;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.login-back:hover {
+  color: var(--color-accent);
+}
+
+/* ===========================
    Footer
 =========================== */
 footer {
@@ -340,6 +449,18 @@ footer p {
   .nav-links a {
     display: block;
     padding: 12px 24px;
+  }
+
+  .nav-links {
+    align-items: stretch;
+  }
+
+  /* 모바일 메뉴 안의 Login 버튼: 좌우 여백을 두고 전체 너비 */
+  .nav-links a.nav-login {
+    display: block;
+    margin: 8px 24px 4px;
+    padding: 12px 24px;
+    text-align: center;
   }
 
   .nav-toggle {
@@ -392,6 +513,15 @@ footer p {
   .location-item {
     flex-direction: column;
     gap: 4px;
+  }
+
+  /* Login: 모바일 여백 */
+  .login-section {
+    padding: 48px 16px;
+  }
+
+  .login-card {
+    padding: 36px 24px;
   }
 
   /* 입력창: iOS 자동 확대 방지(16px 이상) */
