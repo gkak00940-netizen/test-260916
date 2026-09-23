@@ -21,6 +21,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 60px; /* 고정 navbar에 섹션 제목이 가려지지 않도록 */
 }
 
 body {
@@ -29,6 +30,14 @@ body {
   color: var(--color-text);
   background: var(--color-bg);
   line-height: 1.8;
+  overflow-x: clip; /* 불필요한 좌우 스크롤 방지 */
+  word-break: keep-all; /* 한글 단어 단위 줄바꿈 */
+  overflow-wrap: anywhere; /* 긴 단어·이메일이 화면 밖으로 넘치지 않도록 */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* ===========================
@@ -189,6 +198,15 @@ body {
   mix-blend-mode: multiply;
 }
 
+.menu-img-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-gray);
+  font-size: 3rem;
+  mix-blend-mode: normal;
+}
+
 .menu-card h3 {
   font-family: var(--font-display);
   font-size: 1.5rem;
@@ -325,11 +343,37 @@ footer p {
   }
 
   .nav-toggle {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    margin-right: -10px; /* 아이콘 위치는 그대로, 터치 영역만 확장 */
+  }
+
+  /* Hero: 세로 배치 */
+  #hero {
+    padding: 72px 20px;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   #hero h1 {
     font-size: 3.2rem;
+  }
+
+  /* 버튼: 누르기 편한 최소 크기 */
+  .btn {
+    min-height: 48px;
+    padding: 12px 32px;
+  }
+
+  #contact-form .btn {
+    width: 100%;
   }
 
   .menu-grid {
@@ -338,5 +382,21 @@ footer p {
 
   .section {
     padding: 56px 0;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  /* Location: 항목명과 내용을 위아래로 */
+  .location-item {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  /* 입력창: iOS 자동 확대 방지(16px 이상) */
+  .form-group input,
+  .form-group textarea {
+    font-size: 16px;
   }
 }
